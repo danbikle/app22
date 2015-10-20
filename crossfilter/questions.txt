@@ -1,0 +1,24 @@
+/home/ann/app22/cf/questions.txt
+
+Which JS files does crossfilter-app serve to the browser?
+a:
+-rw-rw-r-- 1 dan dan    9561 Oct 18 19:50 crossfilter.v1.min.js
+-rw-rw-r-- 1 dan dan  144801 Oct 18 19:50 d3.v3.min.js
+
+Where does cf-app get data from?
+a:
+The data comes from a local file served to the browser:
+flights-3m.json
+
+Is the data in JSON format?
+a:
+No, actually it is CSV.
+Perhaps the intent behind the json-suffix is to ask github.com to compress flights-3m.json
+
+In crossfilter.html, what does this syntax do:
+@import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:400,700);
+??
+a: Perhaps CSS has an remote-import mechanism?
+http://www.google.com/search?q=in+CSS+what+does+@import+url+do
+
+
