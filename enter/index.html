@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>Demo of D3 enter(), exit(), svg-circle</title>
+    <script src="/d3.v3.min.js"></script>
+  </head>
+  <!-- ref: -->
+  <!-- https://medium.com/@c_behrens/enter-update-exit-6cafc6014c36 -->
+  <body>
+    <h1>Demo of D3 enter(), exit(), svg-circle</h1>
+    <!-- %svg(width="550" height="550") -->
+    <svg>
+      <circle class="d3circle" cx="20" cy="100" fill="red" r="20"></circle>
+      <circle class="d3circle" cx="70" cy="100" fill="green" r="30"></circle>
+    </svg>
+    <br>
+    <div id="scratchpad"></div>
+    <br>
+    <br>
+    Here is my list:
+    <br>
+    <ul id="mylist">
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+    </ul>
+    <script>
+      var myarray = [15,8,42,4];
+      // Add a number to myarray
+      myarray.push(9);
+      // I should see myarray:
+      document.getElementById("scratchpad").innerHTML = 'myarray: '+myarray;
+      // Use D3 to create array, myselection, from HTML. 
+      var myselection = d3.select("ul#mylist").selectAll("li");
+      // I should use D3 to change myselection.
+      myselection.text(function(d){return 'hello';});
+      // 'Join' the 2 arrays
+      var myjoin  = myselection.data(myarray);
+      // I should use D3 to 'Update' myjoin.
+      myjoin.text(function(d){return d;});
+      // I should call .enter() to deal with this number which just entered myarray.
+      var myvar = myjoin.enter();
+      myvar.append("li").text('hello');
+      var abc = 123;
+    </script>
+  </body>
+</html>
