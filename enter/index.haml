@@ -25,8 +25,6 @@
       %li 1
     :javascript
       var myarray = [15,8,42,4];
-      // Add a number to myarray
-      myarray.push(9);
       // I should see myarray:
       document.getElementById("scratchpad").innerHTML = 'myarray: '+myarray;
       // Use D3 to create array, myselection, from HTML. 
@@ -37,6 +35,8 @@
       var myjoin  = myselection.data(myarray);
       // I should use D3 to 'Update' myjoin.
       myjoin.text(function(d){return d;});
+      // Add a number to myarray
+      myarray.push(9);
       // I should call .enter() to deal with this number which just entered myarray.
       var myvar = myjoin.enter();
       myvar.append("li").text('hello');
