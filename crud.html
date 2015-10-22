@@ -4,17 +4,29 @@
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
     <title>Mixing CRUD Idea with D3.js</title>
     <script src="/d3.v3.min.js"></script>
+    <style>
+      pre {color: #800; font-weight: bold; font-size: 18px;}
+    </style>
   </head>
   <body>
-    crud.html
+    <h1>app22/crud.html</h1>
+    <pre>
+      I use the CRUD acronym as a start when I want to learn about a new API.
+      The C in CRUD stands for Create.                                       
+      The R stands for Retrieve.                                             
+      The U stands for Update.                                               
+      The D stands for Delete.                                               
+      After I can use a given API to do CRUD operations on objects,          
+      then I am on a path towards understanding that API.
+    </pre>
+    <p>
+      When I do CRUD with D3.js I operate on two types of things.
+    </p>
+    <p>
+      First I CRUD HTML-elements like div-elements and svg-elements.
+      Also I CRUD JavaScript objects related to the D3.js API.
+    </p>
     <script>
-      var crudstr10 = 'I use the CRUD acronym as a start when I want to learn about a new API.\
-      The C in CRUD stands for Create.                                                        \
-      The R stands for Retrieve.                                                              \
-      The U stands for Update.                                                                \
-      The D stands for Delete.                                                                \
-      After I can use a given API to do CRUD operations on objects,                           \
-      then I am on a path towards understanding that API.';
       // I start by Create of D3 selection object:                                    
       var body_sel = d3.select('body');
       // Next I Create an HTML element:
