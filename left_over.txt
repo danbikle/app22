@@ -39,9 +39,9 @@ call the leftover data scenario.
 
 Here is some JS to deal with that scenario:
 
-      var myarray = [11,22,33,44,55,66];
-      var li_sel = d3.select("ul#ul0").selectAll("li");
-      var joined_sel = li_sel.data(myarray);
+      var urarray = [11,22,33,44,55,66];
+      var li_sel = d3.select("ul#ul2").selectAll("li");
+      var joined_sel = li_sel.data(urarray);
       var updated_sel = joined_sel.text(function(d){return d;});
       'done';
 
@@ -55,7 +55,7 @@ The two likely scenarios are:
 
 Ignoring them is easy.
 
-I create li-elements from them with a two-step process:
+I create li-elements from them with a three-step process:
 
 var leftover_sel = updated_sel.enter();
 leftover_sel.append('li');

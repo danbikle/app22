@@ -6,15 +6,22 @@
     <script src="/d3.v3.min.js"></script>
   </head>
   <body>
-    <ul id='ul0'>
-      <li>0</li><li>0</li><li>0</li><li>0</li>
-    </ul>
+    <hr />
+    <ul id='ul0'><li>0</li><li>0</li><li>0</li><li>0</li></ul>
+    <hr />
+    <ul id='ul2'><li>2</li><li>2</li><li>2</li><li>2</li></ul>
+    <hr />
     <script>
-      var myarray = [11,22,33,44];
-      var li_sel = d3.select("ul#ul0").selectAll("li");
-      var joined_sel = li_sel.data(myarray);
-      var updated_sel = joined_sel.text(function(d){return d;});
-      'done';
+      var myarray      = [11,22,33,44];
+      var li_sel0      = d3.select("ul#ul0").selectAll("li");
+      var joined_sel0  = li_sel0.data(myarray);
+      var updated_sel0 = joined_sel0.text(function(d){return d;});
+      'Above, myarray and li_sel0 match cleanly';
+      var urarray      = [11,22,33,44,55,66];
+      var li_sel2      = d3.select("ul#ul2").selectAll("li");
+      var joined_sel2  = li_sel2.data(urarray);
+      var updated_sel2 = joined_sel2.text(function(d){return d;});
+      'Above, urarray has leftover data.';
     </script>
   </body>
 </html>
