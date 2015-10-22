@@ -5,7 +5,7 @@
     <title>Mixing CRUD Idea with D3.js</title>
     <script src="/d3.v3.min.js"></script>
     <style>
-      body{font-size: 18px;}
+      body{font-style: sans-serif; font-size: 18px;}
       pre {color: #800; font-weight: bold;}
     </style>
   </head>
@@ -49,11 +49,11 @@
     With debugger, I step through the JS in the script-element below to see CRUD in action:
     <script>
       // I start by Create of D3 selection object:                                    
-      var body_sel = d3.select('body');
+      var div_sel = d3.select('div#crudhere');
       // Next I Create an HTML element:
-      body_sel.append('ul');
+      div_sel.append('ul');
       // More Creation:
-      var ul_sel = body_sel.select('ul');
+      var ul_sel = div_sel.select('ul');
       li0_sel = ul_sel.append('li');
       // Retrieve is simple but useful sometimes in debugger-console:
       li0_sel;
@@ -70,5 +70,8 @@
       li1_sel.remove();
       'done';
     </script>
+    <div id='crudhere'>
+      CRUD happens.
+    </div>
   </body>
 </html>
