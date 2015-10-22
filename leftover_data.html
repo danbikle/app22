@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+    <title>leftover_data.html</title>
+    <script src="/d3.v3.min.js"></script>
+  </head>
+  <body>
+    <ul id='ul0'>
+      <li>0</li><li>0</li><li>0</li><li>0</li>
+    </ul>
+    <script>
+      var myarray = [11,22,33,44];
+      var li_sel = d3.select("ul#ul0").selectAll("li");
+      var joined_sel = li_sel.data(myarray);
+      var updated_sel = joined_sel.text(function(d){return d;});
+      'done';
+    </script>
+  </body>
+</html>
