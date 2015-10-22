@@ -1,0 +1,21 @@
+
+
+In crud.html I describe the CRUD acronym to say that I can use D3.js to operate on HTML which resides in your browser.
+
+The U in CRUD stands for Update.
+
+A useful D3.js method which can Update HTML is the data() method.
+
+The scenario below helps me understand the data() method.
+
+I use emacs to create 4 li-elements.
+
+Next, I create a JS array called myarray which has 4 values.
+
+Then, I create a D3 object named li_sel from the 4 li-elements.
+
+Next, I 'join' myarray with li_sel using the data() method like this:
+
+joined_sel = li_sel.data(myarray);
+
+
