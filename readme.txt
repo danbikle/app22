@@ -1,6 +1,16 @@
 /home/ann/app22/readme.txt
 
-This repository contains a variety of demonstrations.
+This repository contains a variety of demonstrations related to D3.js
 
-- http://square.github.io/crossfilter/
+I will discuss these demos at my Meetup on Saturday 2015-10-24 3pm at Hacker Dojo in Mountain View:
+
+http://www.meetup.com/Dans-Linux-JavaScript-Class/events/225904559
+
+If you have questions, e-me:
+
+bikle101 at gmail
+
+
+
+
 
