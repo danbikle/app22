@@ -2,11 +2,11 @@
 <html lang="en">
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-    <title>leftover_data.html</title>
+    <title>leftover_html.html</title>
     <script src="/d3.v3.min.js"></script>
   </head>
   <body>
-    This page uses my concept of 'leftover data' to teach you how to use the D3-enter() method.
+    This page uses my concept of 'leftover HTML' to teach you how to use the D3-exit() method.
     <br />
     <br />
     Here is my list of 4 li-elements:
@@ -23,13 +23,12 @@
       li_sel.text(function(d){return 'hello';});
 
       // I demo how to 'join' a JS array with the D3 object: li_sel
-      var myarray = [1,2,3,4,5,6];
+      var myarray = [1,2];
       var joined_sel = li_sel.data(myarray);
       /* li_sel has 4 members which can eat from myarray.
-         But myarray has 6 members so I have 2 leftovers.*/
-      var leftover_sel = joined_sel.enter();
-      var larger_sel = leftover_sel.append('li');
-      larger_sel.text('this is a leftover li');
+         But myarray only has 2 members so I have 2 HTML leftovers.*/
+      var leftover_sel = joined_sel.exit();
+      var smaller_sel = leftover_sel.remove();
       "done";
 
     </script>
