@@ -32,7 +32,18 @@
       <li>Create Method 2: D3 call to append()</li>
       <li>Retrieve: Just Click Reload Button</li>
       <li>Update Methods: D3 calls: append(), attr(), style(), html(), text()</li>
-      <li>Delete Methods: D3 calls: remove()</li>
+      <li>Delete Methods: D3 call: remove()</li>
+    </ul>
+    <h2>D3.js CRUD:</h2>
+    <ul>
+      <li>Create Method 1: obj1 = d3.select('ul#mylist');</li>
+      <li>Create Method 2: obj2 = obj1.selectAll('li');</li>
+      <li>Retrieve: Just list the object name (useful in debugger-console): obj2;</li>
+      <li>Update Methods 1: D3 calls: append(), attr(), style(), html(), text()</li>
+      <li>Update Method 2: D3 call: obj2.data(myarray);</li>
+      <li>Create Method 3 (left over data into obj3): obj3 = obj2.enter();</li>
+      <li>Create Method 4 (left over HTML into obj4): obj4 = obj2.exit();</li>
+      <li>Delete Methods: D3 call: obj4.remove()</li>
     </ul>
     <script>
       // I start by Create of D3 selection object:                                    
