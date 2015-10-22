@@ -14,7 +14,27 @@
       The U stands for Update.                                                                \
       The D stands for Delete.                                                                \
       After I can use a given API to do CRUD operations on objects,                           \
-      then I am on a path towards understanding that API.';                                    
+      then I am on a path towards understanding that API.';
+      // I start by Create of D3 selection object:                                    
+      var body_sel = d3.select('body');
+      // Next I Create an HTML element:
+      body_sel.append('ul');
+      // More Creation:
+      var ul_sel = body_sel.select('ul');
+      li0_sel = ul_sel.append('li');
+      // Retrieve is simple but useful sometimes in debugger-console:
+      li0_sel;
+      // I Update an HTML element using D3 html() call:
+      li0_sel.html('<h1>I am Updated.</h1>')
+      h1_sel = li0_sel.select('h1');
+      // I can also Update using D3 text() call:
+      h1_sel.text('h1 has been updated by text().');
+      // The D in CRUD is Delete.
+      // I demo Delete of an HTML element after I create it:
+      li1_sel = ul_sel.append('li');
+      li1_sel.html('<h1>Delete Me.</h1>');
+      // This is a good place to stop the debugger so I see the h1-element before I delete it.
+      li1_sel.remove();
       'done';
 
     </script>
