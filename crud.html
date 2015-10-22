@@ -6,27 +6,26 @@
     <script src="/d3.v3.min.js"></script>
     <style>
       body{font-style: sans-serif; font-size: 18px;}
-      pre {color: #800; font-weight: bold;}
     </style>
   </head>
   <body>
     <h1>app22/crud.html</h1>
-    <pre>
-      I use the CRUD acronym as a start when I want to learn about a new API.
-      The C in CRUD stands for Create.                                       
-      The R stands for Retrieve.                                             
-      The U stands for Update.                                               
-      The D stands for Delete.                                               
-      After I can use a given API to do CRUD operations on objects,          
-      then I am on a path towards understanding that API.
-    </pre>
-    <p>
-      When I do CRUD with D3.js I operate on two types of things.
-    </p>
-    <p>
-      First I CRUD HTML-elements like div-elements and svg-elements.
-      Also I CRUD JavaScript objects related to the D3.js API.
-    </p>
+    I use the CRUD acronym as a start when I want to learn about a new API.
+    <ul>
+      <li>The C in CRUD stands for Create.</li>                                       
+      <li>The R stands for Retrieve.      </li>                                       
+      <li>The U stands for Update.        </li>                                       
+      <li>The D stands for Delete.        </li>                                       
+    </ul>
+    After I can use a given API to do CRUD operations on objects,          
+    then I am on a path towards understanding that API.
+    <br />
+    <br />
+    When I do CRUD with D3.js I operate on two types of things.
+    <br />
+    <br />
+    First I CRUD HTML-elements like div-elements and svg-elements.
+    Also I CRUD JavaScript objects related to the D3.js API.
     <h2>HTML CRUD:</h2>
     <ul>
       <li>Create Method 1: Type it in via emacs</li>
@@ -46,6 +45,11 @@
       <li>Create Method 4 (left over HTML into obj4): obj4 = obj2.exit();</li>
       <li>Delete Methods: D3 call: obj4.remove()</li>
     </ul>
+    <hr />
+    <div id='crudhere'>
+      <p>CRUD happens.</p>
+    </div>
+    <hr />
     With debugger, I step through the JS in the script-element below to see CRUD in action:
     <script>
       // I start by Create of D3 selection object:                                    
@@ -70,8 +74,11 @@
       li1_sel.remove();
       'done';
     </script>
-    <div id='crudhere'>
-      CRUD happens.
-    </div>
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
   </body>
 </html>
