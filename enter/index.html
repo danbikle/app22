@@ -41,7 +41,12 @@
       joined_selection  = li_selection.data(myarray);
       // I should call .enter() to deal with this number which just entered myarray.
       var bigger_selection = joined_selection.enter();
-      bigger_selection.append("li").text('hello');
+      var new_li = bigger_selection.append("li");
+      new_li.text('HELLO');
+      var new_datum = bigger_selection[0][4]['__data__'];
+      new_li.text(new_datum);
+      new_li.text('DAN');
+      new_li.text(function(d){return d;});
       myarray
     </script>
   </body>
