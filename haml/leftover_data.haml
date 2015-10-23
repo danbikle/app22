@@ -25,10 +25,7 @@
     %br/
     I use emacs to create 4 li-elements:
     %pre
-      %code
-        &lt;ul id='ul0'>
-        &lt;li>0&lt;/li>&lt;li>0&lt;/li>&lt;li>0&lt;/li>&lt;li>0&lt;/li>
-        &lt;/ul>
+      %code &lt;ul id='ul0'> &lt;li>1&lt;/li>&lt;li>2&lt;/li>&lt;li>3&lt;/li>&lt;li>4&lt;/li> &lt;/ul>
           
     Next, I create a JS array called myarray which has 4 values:
     %pre
@@ -62,11 +59,8 @@
     %br/
     Assuming I have this HTML loaded into my browser:
     %pre
-      %code
-        &lt;ul id='ul2'>
-        &lt;li>2&lt;/li>&lt;li>2&lt;/li>&lt;li>2&lt;/li>&lt;li>2&lt;/li>
-        &lt;/ul>
-          
+      %code &lt;ul id='ul2'> &lt;li>1&lt;/li>&lt;li>2&lt;/li>&lt;li>3&lt;/li>&lt;li>4&lt;/li> &lt;/ul>
+
     Here is some JS to deal with that scenario:
     %pre
       %code
@@ -113,16 +107,16 @@
     Feel free to right-click Inspect-Element in your browser to step your debugger through the code hidden below:
     %hr/
     %ul#ul0
-      %li 0
-      %li 0
-      %li 0
-      %li 0
+      %li 1
+      %li 2
+      %li 3
+      %li 4
     %hr/
     %ul#ul2
+      %li 1
       %li 2
-      %li 2
-      %li 2
-      %li 2
+      %li 3
+      %li 4
     %hr/
     :javascript
       var myarray      = [11,22,33,44];
