@@ -9,12 +9,19 @@
     <h1>app22/leftover_data.html</h1>
 
 In crud.html I describe the CRUD acronym to say that I can use D3.js to operate on HTML which resides in your browser.
-
+<br />
+<br />
 The U in CRUD stands for Update.
+<br />
+<br />
 
 A useful D3.js method which can Update HTML is the data() method.
+<br />
+<br />
 
 The scenario below helps me understand the data() method.
+<br />
+<br />
 
 I use emacs to create 4 li-elements:
 
@@ -39,11 +46,17 @@ Then, I can copy values from myarray into the li-elements like this:
       var updated_sel0 = joined_sel0.text(function(d){return d;});
 
 So, this idea of using data in myarray to 'drive' an update of 4 li-elements is a central feature of D3.js and I think of it when ever I see calls to data() in D3.js syntax.
+<br />
+<br />
 
 In the above scenario I ensured that both the ul-element and myarray had 4 members.
+<br />
+<br />
 
 If, however, the ul-element has 4 members and myarray has 6 members then I enter into what I
 call the leftover data scenario.
+<br />
+<br />
 
 Assuming I have this HTML loaded into my browser:
 
@@ -58,14 +71,20 @@ Here is some JS to deal with that scenario:
       var joined_sel2  = li_sel2.data(urarray);
 
 I can see that I have two leftover members: [55,66]
+<br />
+<br />
 
 What can I do with them?
+<br />
+<br />
 
 The two likely scenarios are:
   - Ignore them
   - Create li-elements from them
 
 Ignoring them is easy.
+<br />
+<br />
 
 I create li-elements from them with a three-step process:
 
