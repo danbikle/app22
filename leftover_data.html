@@ -20,8 +20,16 @@
       var urarray      = [11,22,33,44,55,66];
       var li_sel2      = d3.select("ul#ul2").selectAll("li");
       var joined_sel2  = li_sel2.data(urarray);
-      var updated_sel2 = joined_sel2.text(function(d){return d;});
+      // var updated_sel2 = joined_sel2.text(function(d){return d;});
       'Above, urarray has leftover data.';
+var leftover_sel = joined_sel2.enter();
+leftover_sel.append('li');
+// fails: leftover_sel.text(function(d){return d;});
+// works:
+joined_sel2.text(function(d){return d;});
+
+/*
+*/
     </script>
   </body>
 </html>
