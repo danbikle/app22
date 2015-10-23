@@ -6,6 +6,73 @@
     <script src="/d3.v3.min.js"></script>
   </head>
   <body>
+    <h1>app22/leftover_data.html</h1>
+
+In crud.html I describe the CRUD acronym to say that I can use D3.js to operate on HTML which resides in your browser.
+
+The U in CRUD stands for Update.
+
+A useful D3.js method which can Update HTML is the data() method.
+
+The scenario below helps me understand the data() method.
+
+I use emacs to create 4 li-elements:
+
+&lt;ul id='ul0'>
+  &lt;li>0&lt;/li>&lt;li>0&lt;/li>&lt;li>0&lt;/li>&lt;li>0&lt;/li>
+&lt;/ul>
+
+Next, I create a JS array called myarray which has 4 values:
+
+var myarray = [11,22,33,44];
+
+Then, I create a D3 object named li_sel from the 4 li-elements.
+
+      var li_sel0      = d3.select("ul#ul0").selectAll("li");
+
+Next, I 'join' myarray with li_sel using the data() method like this:
+
+      var joined_sel0  = li_sel0.data(myarray);
+
+Then, I can copy values from myarray into the li-elements like this:
+
+      var updated_sel0 = joined_sel0.text(function(d){return d;});
+
+So, this idea of using data in myarray to 'drive' an update of 4 li-elements is a central feature of D3.js and I think of it when ever I see calls to data() in D3.js syntax.
+
+In the above scenario I ensured that both the ul-element and myarray had 4 members.
+
+If, however, the ul-element has 4 members and myarray has 6 members then I enter into what I
+call the leftover data scenario.
+
+Assuming I have this HTML loaded into my browser:
+
+&lt;ul id='ul2'>
+  &lt;li>2&lt;/li>&lt;li>2&lt;/li>&lt;li>2&lt;/li>&lt;li>2&lt;/li>
+&lt;/ul>
+
+Here is some JS to deal with that scenario:
+
+      var urarray      = [11,22,33,44,55,66];
+      var li_sel2      = d3.select("ul#ul2").selectAll("li");
+      var joined_sel2  = li_sel2.data(urarray);
+
+I can see that I have two leftover members: [55,66]
+
+What can I do with them?
+
+The two likely scenarios are:
+  - Ignore them
+  - Create li-elements from them
+
+Ignoring them is easy.
+
+I create li-elements from them with a three-step process:
+
+      var leftover_sel = joined_sel2.enter();
+      leftover_sel.append('li');
+      joined_sel2.text(function(d){return d;});
+
     <hr />
     <ul id='ul0'><li>0</li><li>0</li><li>0</li><li>0</li></ul>
     <hr />
@@ -20,16 +87,12 @@
       var urarray      = [11,22,33,44,55,66];
       var li_sel2      = d3.select("ul#ul2").selectAll("li");
       var joined_sel2  = li_sel2.data(urarray);
-      // var updated_sel2 = joined_sel2.text(function(d){return d;});
       'Above, urarray has leftover data.';
-var leftover_sel = joined_sel2.enter();
-leftover_sel.append('li');
-// fails: leftover_sel.text(function(d){return d;});
-// works:
-joined_sel2.text(function(d){return d;});
-
-/*
-*/
+      var leftover_sel = joined_sel2.enter();
+      leftover_sel.append('li');
+      // fails: leftover_sel.text(function(d){return d;});
+      // works:
+      joined_sel2.text(function(d){return d;});
     </script>
   </body>
 </html>
