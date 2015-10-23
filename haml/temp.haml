@@ -90,8 +90,22 @@
         var leftover_sel = joined_sel2.enter();
         leftover_sel.append('li');
         joined_sel2.text(function(d){return d;});
-    Notice the above call to the enter() method.          
-    It demonstrates another useful feature of the D3.js API.
+    Notice the above call to the enter() method.    
+    %br/
+    %br/
+      
+    The enter() method, like data(), is a key feature of the D3.js API which allows data to drive the HTML.      
+    %br/
+    %br/
+    When the data is static, then data() is useful.  When the data
+    is dynamic and 'enters' an array, then the array becomes mismatched with the 
+    corresponding HTML.      
+    %br/
+    %br/
+    I can then use the enter() method help pull the new data into the HTML.
+
+    %br/
+    %br/
 
     Feel free to right-click Inspect-Element in your browser to step your debugger through the code hidden below:
     %hr/
