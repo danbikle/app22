@@ -12,11 +12,11 @@
     #refer
       Refer to:
       %br/
-      %a(href='http://bost.ocks.org/mike/circles/index.html' target='x')
+      %a(href="http://bost.ocks.org/mike/circles/index.html" target="x")
         http://bost.ocks.org/mike/circles/index.html
       %hr/
     In
-    %a(href='crud.html') crud.html
+    %a(href="crud.html") crud.html
     I describe the CRUD acronym to say that I can use D3.js to operate on HTML which resides in your browser.
     %br/
     %br/
@@ -31,28 +31,19 @@
     %br/
     I use emacs to create 4 li-elements:
     %pre
-      %code &lt;ul id='ul0'> &lt;li>1&lt;/li>&lt;li>2&lt;/li>&lt;li>3&lt;/li>&lt;li>4&lt;/li> &lt;/ul>
-          
+      %code &lt;ul id='ul0'&gt; &lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;li&gt;4&lt;/li&gt; &lt;/ul&gt;
     Next, I create a JS array called myarray which has 4 values:
     %pre
-      %code
-        var myarray      = [11,22,33,44];
-          
+      %code var myarray      = [11,22,33,44];
     Then, I create a D3 object named li_sel0 from the 4 li-elements:
     %pre
-      %code
-        var li_sel0      = d3.select("ul#ul0").selectAll("li");
-          
+      %code var li_sel0      = d3.select("ul#ul0").selectAll("li");
     Next, I 'join' myarray with li_sel0 using the data() method like this:
     %pre
-      %code
-        var joined_sel0  = li_sel0.data(myarray);
-          
+      %code var joined_sel0  = li_sel0.data(myarray);
     Then, I can copy values from myarray into the li-elements like this:
     %pre
-      %code
-        var updated_sel0 = joined_sel0.text(function(d){return d;});
-          
+      %code var updated_sel0 = joined_sel0.text(function(d){return d;});
     So, this idea of using data in myarray to 'drive' an update of 4 li-elements is a central feature of D3.js and I think of it when ever I see calls to data() in D3.js syntax.
     %br/
     %br/
@@ -65,16 +56,14 @@
     %br/
     Assuming I have this HTML loaded into my browser:
     %pre
-      %code &lt;ul id='ul2'> &lt;li>1&lt;/li>&lt;li>2&lt;/li>&lt;li>3&lt;/li>&lt;li>4&lt;/li> &lt;/ul>
-
+      %code &lt;ul id='ul2'&gt; &lt;li&gt;1&lt;/li&gt;&lt;li&gt;2&lt;/li&gt;&lt;li&gt;3&lt;/li&gt;&lt;li&gt;4&lt;/li&gt; &lt;/ul&gt;
     Here is some JS to deal with that scenario:
     %pre
       %code
-        var urarray      = [11,22,33,44,55,66];
-        var li_sel2      = d3.select("ul#ul2").selectAll("li");
-        var joined_sel2  = li_sel2.data(urarray);
-          
-    I can see that I have two leftover members: [55,66]
+        :preserve
+          var urarray      = [11,22,33,44,55,66];
+              var li_sel2      = d3.select("ul#ul2").selectAll("li");
+              var joined_sel2  = li_sel2.data(urarray);    I can see that I have two leftover members: [55,66]
     %br/
     %br/
     What can I do with them?
@@ -90,26 +79,23 @@
     I create li-elements from them with a three-step process:
     %pre
       %code
-        var leftover_sel = joined_sel2.enter();
-        leftover_sel.append('li');
-        joined_sel2.text(function(d){return d;});
-    Notice the above call to the enter() method.    
+        :preserve
+          var leftover_sel = joined_sel2.enter();
+              leftover_sel.append('li');
+              joined_sel2.text(function(d){return d;});    Notice the above call to the enter() method.
     %br/
     %br/
-      
-    The enter() method, like data(), is a key feature of the D3.js API which allows data to drive the HTML.      
+    The enter() method, like data(), is a key feature of the D3.js API which allows data to drive the HTML.
     %br/
     %br/
     When the data is static, then data() is useful.  When the data
-    is dynamic and 'enters' an array, then the array becomes mismatched with the 
-    corresponding HTML.      
+    is dynamic and 'enters' an array, then the array becomes mismatched with the
+    corresponding HTML.
     %br/
     %br/
     I can then use the enter() method help pull the new data into the HTML.
-
     %br/
     %br/
-
     Feel free to right-click Inspect-Element in your browser to step your debugger through the code hidden below:
     %hr/
     %ul#ul0
