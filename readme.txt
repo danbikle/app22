@@ -6,6 +6,10 @@ I will discuss these demos at my Meetup on Saturday 2015-10-24 3pm at Hacker Doj
 
 http://www.meetup.com/Dans-Linux-JavaScript-Class/events/225904559
 
+I wrote some deployment instructions into this URL:
+
+http://www.syntax.us/posts/code_challenge2015_1024
+
 If you have questions, e-me:
 
 bikle101 at gmail
